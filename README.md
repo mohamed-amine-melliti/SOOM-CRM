@@ -1,6 +1,6 @@
 
 
-# E-invocing module ..
+# CRM module ..
 # 
 ## Vue.js + Quasar Framework is a great combination . 
 
