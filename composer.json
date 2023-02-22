@@ -1,7 +1,7 @@
 {
-    "name": "krayin/laravel-crm",
+    "name": "soom/laravel-crm",
     "type": "project",
-    "description": "Krayin CRM",
+    "description": "SOOM CRM",
     "keywords": [
         "framework",
         "laravel"
@@ -21,6 +21,7 @@
         "laravel/ui": "^3.2",
         "maatwebsite/excel": "^3.1",
         "prettus/l5-repository": "^2.7",
+        "salla/zatca": "^2.0",
         "webklex/php-imap": "^2.2.5"
     },
     "require-dev": {
@@ -61,7 +62,8 @@
             "Webkul\\Tag\\": "packages/Webkul/Tag/src",
             "Webkul\\UI\\": "packages/Webkul/UI/src",
             "Webkul\\User\\": "packages/Webkul/User/src",
-            "Webkul\\Workflow\\": "packages/Webkul/Workflow/src"
+            "Webkul\\Workflow\\": "packages/Webkul/Workflow/src",
+            "Webkul\\Excercice\\": "packages/Webkul/Excercice/src"
         }
     },
     "autoload-dev": {

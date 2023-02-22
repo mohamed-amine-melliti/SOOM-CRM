@@ -13,6 +13,17 @@
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "postcss-import": "^14.1.0",
+        "tailwindcss": "^3.0.24"
+    },
+    "dependencies": {
+        "@azure/ai-form-recognizer": "^4.0.0",
+        "@azure/identity": "^3.0.0",
+        "autoprefixer": "^10.4.7",
+        "dropzone-vue": "^0.1.11",
+        "npm-watch": "^0.11.0",
+        "vue-media-upload": "^1.1.4",
+        "vue2-dropzone": "^3.6.0"
     }
 }

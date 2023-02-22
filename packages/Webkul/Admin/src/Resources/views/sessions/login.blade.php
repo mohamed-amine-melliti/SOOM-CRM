@@ -5,9 +5,17 @@
 @stop
 
 @section('content')
-    <div class="panel">
-        <div class="panel-body">
 
+
+    <style>
+        .panel {
+
+            z-index: 999;
+        }
+    </style>
+
+    <div class="panel" >
+        <div class="panel-body">
             <div class="form-container">
                 <h1>{{ __('admin::app.sessions.login.welcome') }}</h1>
 
@@ -15,6 +23,7 @@
                     {!! view_render_event('admin.sessions.login.form_controls.before') !!}
 
                     @csrf
+
 
                     <div class="form-group" :class="[errors.has('email') ? 'has-error' : '']">
                         <label for="email">{{ __('admin::app.sessions.login.email') }}</label>
@@ -67,6 +76,8 @@
             </div>
         </div>
     </div>
+
+
 @stop
 
 @push('scripts')

@@ -6,6 +6,7 @@
 
 @section('content-wrapper')
     <div class="content full-page dashboard">
+
         <h1>{{ __('admin::app.dashboard.title') }}</h1>
 
         {!! view_render_event('admin.dashboard.index.filter.before') !!}
@@ -127,6 +128,8 @@
                 </div>
             </div>
 
+
+
             <div class="column-container" v-else-if="cardType == 'column-grid-2'" v-for="(data, index) in dataCollection.data">
                 <span>@{{ data.count }}</span>
                 <span>@{{ data.label }}</span>
@@ -137,6 +140,7 @@
                 <div class="custom-card">{{ __('admin::app.dashboard.custom_card') }}</div>
             </template>
 
+
             <template v-if="! dataCollection || dataCollection.length == 0 || (dataCollection.data && dataCollection.data.length == 0)">
                 <div class="custom-card">
                     <i
@@ -146,7 +150,7 @@
 
                     <img
                         v-else
-                        src="{{ asset('vendor/webkul/admin/assets/images/empty-state-icon.svg') }}"
+                        src="{{ asset('vendor/webkul/admin/assets/images/soEmpty.gif') }}"
                     />
 
                     <span>{{ __('admin::app.dashboard.no_record_found') }}</span>

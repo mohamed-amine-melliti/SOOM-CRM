@@ -28,6 +28,12 @@ Vue.component('draggable', draggable);
 
 Vue.component('vue-cal', VueCal);
 
+Vue.component('file-uploader-component', require('../components/FileUploaderComponent.vue').default);
+/*************************************************/
+
+
+/*************************************************/
+
 $(function() {
     let app = new Vue({
         el: "#app",
@@ -91,7 +97,7 @@ $(function() {
             addServerErrors(scope = null) {
                 for (var key in serverErrors) {
                     var inputNames = [];
-                    
+
                     key.split('.').forEach(function(chunk, index) {
                         if(index) {
                             inputNames.push('[' + chunk + ']')

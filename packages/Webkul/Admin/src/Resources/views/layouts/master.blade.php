@@ -1,101 +1,106 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <title>@yield('page_title')</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <title>@yield('page_title')</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-57x57.png') }}">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-60x60.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-76x76.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-114x114.png') }}">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-120x120.png') }}">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-144x144.png') }}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-152x152.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-180x180.png') }}">
-        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('vendor/webkul/admin/assets/images/favicon/android-icon-192x192.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon-96x96.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ asset('vendor/webkul/admin/assets/images/favicon/manifest.json') }}">
-
-        <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
-
-        @yield('head')
-
-        @yield('css')
-        @stack('css')
-
-        {!! view_render_event('admin.layout.head') !!}
-
-    </head>
-
-    <body style="scroll-behavior: smooth;">
-        {!! view_render_event('admin.layout.body.before') !!}
-
-        <div id="app">
-            <spinner-meter :full-page="true" v-if="! pageLoaded"></spinner-meter>
-
-            <flash-wrapper ref='flashes'></flash-wrapper>
-
-            {!! view_render_event('admin.layout.nav-top.before') !!}
-
-            @include ('admin::layouts.nav-top')
-
-            {!! view_render_event('admin.layout.nav-top.after') !!}
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/favicon.ico') }}">
 
 
-            {!! view_render_event('admin.layout.nav-left.before') !!}
+    <link rel="manifest" href="{{ asset('vendor/webkul/admin/assets/images/favicon/manifest.json') }}">
 
-            @include ('admin::layouts.nav-left')
+    <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
 
-            {!! view_render_event('admin.layout.nav-left.after') !!}
+
+    @yield('head')
+    @yield('css')
+    @stack('css')
+
+    {!! view_render_event('admin.layout.head') !!}
+
+</head>
+
+<body style="scroll-behavior: smooth;" @if (app()->getLocale() == 'ar') class="rtl" @endif>
+{!! view_render_event('admin.layout.body.before') !!}
+
+<div id="app" >
 
 
-            <div class="content-container" :style="{ paddingLeft: isMenuOpen ? '160px' : ''}">
+    <spinner-meter :full-page="true" v-if="! pageLoaded"></spinner-meter>
 
-                {!! view_render_event('admin.layout.content.before') !!}
+    <flash-wrapper ref='flashes'></flash-wrapper>
 
-                @yield('content-wrapper')
+    {!! view_render_event('admin.layout.nav-top.before') !!}
 
-                {!! view_render_event('admin.layout.content.after') !!}
+    @include ('admin::layouts.nav-top')
 
-            </div>
+    {!! view_render_event('admin.layout.nav-top.after') !!}
 
-        </div>
 
-        <script type="text/javascript">
-            window.flashMessages = [];
+    {!! view_render_event('admin.layout.nav-left.before') !!}
 
-            @foreach (['success', 'warning', 'error', 'info'] as $key)
-                @if ($value = session($key))
-                    window.flashMessages.push({'type': '{{ $key }}', 'message': "{{ $value }}" });
-                @endif
-            @endforeach
+    @include ('admin::layouts.nav-left')
 
-            window.serverErrors = [];
+    {!! view_render_event('admin.layout.nav-left.after') !!}
 
-            @if (isset($errors) && count($errors))
-                window.serverErrors = @json($errors->getMessages());
-            @endif
 
-            window._translations = {};
-            window._translations['ui'] = @json(app('Webkul\Core\Helpers\Helper')->jsonTranslations("UI"));
-            window.baseURL = '{{ url()->to('/') }}';
-            window.params = @json(request()->route()->parameters());
-        </script>
+    <div class="content-container" :style="{ paddingLeft: isMenuOpen ? '160px' : ''}">
 
-        <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
+        {!! view_render_event('admin.layout.content.before') !!}
 
-        @stack('scripts')
+        @yield('content-wrapper')
 
-        {!! view_render_event('admin.layout.body.after') !!}
+        {!! view_render_event('admin.layout.content.after') !!}
 
-        <div class="modal-overlay"></div>
-    </body>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    window.flashMessages = [];
+    @foreach (['success', 'warning', 'error', 'info'] as $key)
+    @if ($value = session($key))
+    window.flashMessages.push({'type': '{{ $key }}', 'message': "{{ $value }}" });
+    @endif
+        @endforeach
+        window.serverErrors = [];
+    @if (isset($errors) && count($errors))
+        window.serverErrors = @json($errors->getMessages());
+    @endif
+        window._translations = {};
+    window._translations['ui'] = @json(app('Webkul\Core\Helpers\Helper')->jsonTranslations("UI"));
+    window.baseURL = '{{ url()->to('/') }}';
+    window.params = @json(request()->route()->parameters());
+</script>
+
+<script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
+<script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
+
+@stack('scripts')
+
+{!! view_render_event('admin.layout.body.after') !!}
+
+<div class="modal-overlay"></div>
+
+
+</body>
+
+
 </html>

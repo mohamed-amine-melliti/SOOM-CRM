@@ -9,4 +9,5 @@ Route::group(['middleware' => ['web', 'user']], function () {
      * DataGrid export.
      */
     Route::post('/export', [ExportController::class, 'export'])->name('ui.datagrid.export');
+
 });

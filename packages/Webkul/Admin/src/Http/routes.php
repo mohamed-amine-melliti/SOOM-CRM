@@ -230,6 +230,60 @@ Route::group(['middleware' => ['web']], function () {
 
                 Route::put('mass-destroy', 'ProductController@massDestroy')->name('admin.products.mass_delete');
             });
+           /***********************************************************************************************************************************/
+            //Excercices Routes
+            Route::view('/excercies', 'admin::excercices.index')->name('admin.excercice.index');
+            //Tickets Routes
+            Route::view('/tickets', 'admin::tickets.index')->name('admin.tickets.index');
+            //Tickets Routes
+            Route::get('/Invoices/', function(){
+                return redirect()->away('http://localhost:8080/');
+            })->name('admin.invoices');
+            /***********************************************************************************************************************************/
+
+            // Products Routes
+            Route::group([
+                'prefix'    => 'products',
+                'namespace' => 'Webkul\Admin\Http\Controllers\Product'
+            ], function () {
+                Route::get('', 'ProductController@index')->name('admin.products.index');
+
+                Route::get('create', 'ProductController@create')->name('admin.products.create');
+
+                Route::post('create', 'ProductController@store')->name('admin.products.store');
+
+                Route::get('edit/{id}', 'ProductController@edit')->name('admin.products.edit');
+
+                Route::put('edit/{id}', 'ProductController@update')->name('admin.products.update');
+
+                Route::get('search', 'ProductController@search')->name('admin.products.search');
+
+                Route::delete('{id}', 'ProductController@destroy')->name('admin.products.delete');
+
+                Route::put('mass-destroy', 'ProductController@massDestroy')->name('admin.products.mass_delete');
+            });
+
+            // Products Routes
+            Route::group([
+                'prefix'    => 'products',
+                'namespace' => 'Webkul\Admin\Http\Controllers\Product'
+            ], function () {
+                Route::get('', 'ProductController@index')->name('admin.products.index');
+
+                Route::get('create', 'ProductController@create')->name('admin.products.create');
+
+                Route::post('create', 'ProductController@store')->name('admin.products.store');
+
+                Route::get('edit/{id}', 'ProductController@edit')->name('admin.products.edit');
+
+                Route::put('edit/{id}', 'ProductController@update')->name('admin.products.update');
+
+                Route::get('search', 'ProductController@search')->name('admin.products.search');
+
+                Route::delete('{id}', 'ProductController@destroy')->name('admin.products.delete');
+
+                Route::put('mass-destroy', 'ProductController@massDestroy')->name('admin.products.mass_delete');
+            });
 
             // Contacts Routes
             Route::group([

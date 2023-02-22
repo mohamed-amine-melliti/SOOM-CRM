@@ -47,6 +47,7 @@
                 @endif
             </li>
         @endforeach
+
     </ul>
 
     <div class="menubar-bottom" @click="toggleMenu">

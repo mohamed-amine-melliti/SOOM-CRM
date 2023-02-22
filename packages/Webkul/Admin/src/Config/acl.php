@@ -426,5 +426,31 @@ return [
         'name'  => 'admin::app.acl.configuration',
         'route' => 'admin.configuration.index',
         'sort'  => 9,
+    ],
+/**********************************************************************************/
+
+    [
+        'key' => 'excercices',
+        'name' => 'Excercices',
+        'route' => 'admin.excercice.index',
+        'sort' => 10,
+    ],
+
+    [
+        'key' => 'Tickets',
+        'name' => 'Tickets',
+        'route' => 'admin.tickets.index',
+        'sort' => 11,
+    ],
+
+    [
+        'key' => 'Invoices',
+        'name' => 'Invoices',
+        'route' => 'admin.invoices',
+        'sort' => 12,
     ]
+
+/**********************************************************************************/
+
+
 ];

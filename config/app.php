@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE','Asia/Kolkata'),
+    'timezone' => env('APP_TIMEZONE','Africa/Tunis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,6 +111,8 @@ return [
 
     'available_locales' => [
         'en' => 'English',
+        'fr' => 'Français',
+        'ar' => 'العربية'
     ],
 
     /*
@@ -148,7 +150,7 @@ return [
     |
     */
 
-    'currency' => env('APP_CURRENCY', 'USD'),
+    'currency' => env('APP_CURRENCY', 'TND'),
 
     /*
     |--------------------------------------------------------------------------
